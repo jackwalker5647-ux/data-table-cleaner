@@ -2,7 +2,6 @@ import "./App.css";
 import { useMemo, useState } from "react";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
-import { Analytics } from "@vercel/analytics/next";
 
 
 /* ---------- parsing helpers ---------- */
