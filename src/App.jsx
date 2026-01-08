@@ -2,6 +2,7 @@ import "./App.css";
 import { useMemo, useState } from "react";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
+import { Analytics } from "@vercel/analytics/react";
 
 /* ---------- parsing helpers ---------- */
 
@@ -646,6 +647,7 @@ Bob | 30 | Madrid`}
       >
         Built as a simple, private utility. No tracking. No uploads.
       </div>
+      <Analytics />
     </div>
   );
 }
