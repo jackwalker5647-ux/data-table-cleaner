@@ -349,7 +349,7 @@ export default function App() {
   return (
     <div className="container">
       <div className="header">
-        <h1>Clean Table Tool</h1>
+        <h1>Clean & Format Table Data Instantly </h1>
         <p>Paste a messy table, or drop a file to clean/export it.</p>
       </div>
 
