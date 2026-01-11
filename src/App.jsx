@@ -2,6 +2,9 @@ import "./App.css";
 import { useMemo, useState } from "react";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
+import ToolFeedback from "./components/ToolFeedback";
+
+
 
 
 /* ---------- parsing helpers ---------- */
@@ -609,6 +612,7 @@ Bob | 30 | Madrid`}
           <li>Cleaning Excel / CSV files before sharing</li>
           <li>Generating Markdown tables for docs or Notion</li>
         </ul>
+        <ToolFeedback />
       </div>
 
       <div className="card" style={{ marginTop: 14 }}>
