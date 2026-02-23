@@ -5,6 +5,14 @@ import * as XLSX from "xlsx";
 import ToolFeedback from "./components/ToolFeedback";
 
 
+// Google Ads conversion: Table Cleaned
+function trackTableCleanedConversion() {
+  if (window.gtag) {
+    window.gtag("event", "conversion", {
+      send_to: "AW-17867586299/EDgfCP3H2v0bEPv19sdC",
+    });
+  }
+}
 
 
 /* ---------- parsing helpers ---------- */
@@ -538,6 +546,7 @@ Bob | 30 | Madrid`}
                 onClick={() => {
                   const tsv = exportTable.map((r) => r.join("\t")).join("\n");
                   navigator.clipboard.writeText(tsv);
+                  trackTableCleanedConversion();
                   alert("Copied! Now paste into Excel or Google Sheets.");
                 }}
               >
@@ -548,6 +557,7 @@ Bob | 30 | Madrid`}
                 onClick={() => {
                   const md = toMarkdownTable(exportTable);
                   navigator.clipboard.writeText(md);
+                  trackTableCleanedConversion();
                   alert("Copied as Markdown table!");
                 }}
               >
@@ -558,6 +568,7 @@ Bob | 30 | Madrid`}
                 onClick={() => {
                   const csv = Papa.unparse(exportTable);
                   downloadTextFile("table.csv", csv, "text/csv;charset=utf-8");
+                  trackTableCleanedConversion();
                 }}
               >
                 Download CSV
@@ -569,6 +580,7 @@ Bob | 30 | Madrid`}
                   const wb = XLSX.utils.book_new();
                   XLSX.utils.book_append_sheet(wb, ws, "Table");
                   XLSX.writeFile(wb, "table.xlsx");
+                  trackTableCleanedConversion();
                 }}
               >
                 Download XLSX
